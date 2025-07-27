@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Solana Wallet Adapter for Next.js
+
+This project is a comprehensive Solana wallet adapter built with Next.js, providing a seamless user experience for interacting with the Solana blockchain. It includes essential features for wallet management, token operations, and transaction handling, all within a modern and responsive user interface.
+
+## Features
+
+This application comes with a variety of features that demonstrate the core functionalities of the Solana wallet adapter.
+
+### 1. Wallet Connectivity
+
+- **Connect and Disconnect:** Users can easily connect their Solana wallets (like Phantom, Solflare, etc.) using a dedicated "Connect Wallet" button. The application's state updates dynamically based on the wallet's connection status, and the user's public key is displayed upon successful connection.
+
+### 2. Balance Inquiry
+
+- **Real-time Balance Display:** Once a wallet is connected, the application fetches and displays the user's current SOL balance. This feature provides immediate feedback to the user about their available funds.
+
+### 3. SOL Transfers
+
+- **Send SOL:** Users can send SOL to any Solana address. The interface includes fields for the recipient's address and the amount to be sent, with clear confirmation and error notifications.
+
+### 4. Testnet SOL Airdrop
+
+- **Airdrop Functionality:** For development and testing purposes, users can airdrop test SOL to their connected wallet address. This is particularly useful when working on devnet or testnet.
+
+### 5. Transaction Signing
+
+- **Sign Transactions:** The application includes a feature to sign a test transaction. This demonstrates how to create and sign transactions on the client-side, a fundamental aspect of dApp development.
+
+### 6. Token Display
+
+- **View Tokens:** The application can display a list of SPL (Solana Program Library) tokens held by the connected wallet. This feature is essential for any application that deals with fungible or non-fungible tokens.
+
+### 7. Wallet Metadata
+
+- **Display Wallet Info:** Users can view metadata associated with their connected wallet, such as the wallet's public key.
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to get a local copy of the project up and running.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (v18 or later)
+- npm or yarn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
 
-## Learn More
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+### Running the Application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Start the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Open your browser:**
+    Navigate to `http://localhost:3000` to see the application in action.
 
-## Deploy on Vercel
+## Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Next.js:** A React framework for building server-side rendered and static web applications.
+- **React:** A JavaScript library for building user interfaces.
+- **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
+- **Solana Web3.js:** The Solana JavaScript API for interacting with the Solana JSON RPC API and Solana runtime.
+- **Solana Wallet Adapter:** A set of React components and hooks for integrating Solana wallets into a React application.
+- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+- **shadcn/ui:** A collection of re-usable UI components.
