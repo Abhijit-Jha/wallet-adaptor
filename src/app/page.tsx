@@ -2,7 +2,6 @@
 import AirDrop from "@/components/AirDrop";
 import Metadata from "@/components/Metadata";
 import Navbar from "@/components/Navbar";
-import Provider from "@/components/Provider";
 import SendSolana from "@/components/SendSolana";
 import SignTransaction from "@/components/SignTransaction";
 import { useWalletModal, WalletModal } from "@solana/wallet-adapter-react-ui";

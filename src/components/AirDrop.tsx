@@ -45,9 +45,14 @@ const AirDrop = () => {
             const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
             const sig = await connection.requestAirdrop(publicKey, airDropAmount * 10 ** 9);
             toast.success(`Airdrop successful! Txn Signature: ${sig}`);
-        } catch (err: any) {
-            toast.error(`Airdrop failed: ${err.message}`);
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                toast.error(`Airdrop failed: ${err.message}`);
+            } else {
+                toast.error(`Airdrop failed: ${String(err)}`);
+            }
         }
+
     };
 
     return (

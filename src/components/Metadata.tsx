@@ -51,10 +51,10 @@ const TokenMetadata = () => {
           .filter((token) => Number(token.amount) > 0) // Filter out zero balance tokens
 
         setTokenInfo(tokenList)
-      } catch (err: any) {
-        console.error("Error fetching token accounts:", err)
-        setError(`Failed to fetch tokens: ${err.message}`)
-      } finally {
+      } catch (err: unknown) {
+        setError(`Airdrop failed: ${err instanceof Error ? err.message : String(err)}`);
+      }
+      finally {
         setLoading(false)
       }
     }

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction } from '@/components/ui/card'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardAction } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
@@ -40,11 +40,15 @@ const SendSolana = () => {
                 toPubkey: new PublicKey(recieverAddress),
                 lamports: amount * LAMPORTS_PER_SOL
             }))
-            
-            await wallet.sendTransaction(transaction,connection);
+
+            await wallet.sendTransaction(transaction, connection);
             toast.success(`Sent ${amount} SOL to ${recieverAddress}`)
-        } catch (error: any) {
-            toast.error(`Transaction failed: ${error.message}`)
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                toast.error(`Transaction failed: ${error.message}`);
+            } else {
+                toast.error(`Transaction failed: ${String(error)}`);
+            }
         }
     }
 

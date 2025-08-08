@@ -19,7 +19,7 @@ const ShowBalance = () => {
     }, [connection, publicKey]);
 
     return (
-        <div className='w-22 border-2 border-black rounded px-2 py-1'>
+        <div className='w-fit border-2 border-black rounded px-2 py-1'>
             {`${(balance / 1e9).toFixed(2)} SOL`}
         </div>
     );

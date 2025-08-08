@@ -34,7 +34,7 @@ const SignTransaction = () => {
             const sig = await signMessage(msg);
             setSignature(sig);
             toast.success("Message signed!");
-        } catch (err) {
+        } catch {
             toast.error("Signing failed.");
         }
     };
